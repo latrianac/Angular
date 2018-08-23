@@ -1,0 +1,25 @@
+
+
+<div *ngIf="selectedPlace">
+  <h2>{{selectedPlace.name | uppercase}} Details</h2>
+  <div>
+    <span>id: </span>{{selectedPlace.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPlace.name" placeholder="name">
+    </label>
+  </div>
+</div>
+
+
+<h2>My Places</h2>
+<ul class="places">
+  <li *ngFor="let place of places" (click)="onSelect(place)">
+    <span class="badge">{{place.id}}</span> {{place.name}}
+  </li>
+</ul>
+
+
+
+
+

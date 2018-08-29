@@ -17,7 +17,11 @@ export class PlaceService {
     return of(PLACES);
   }
 
-  
+  getPlace(id: number): Observable<Place> {
+    // TODO: send the message _after_ fetching the Place
+    this.messageService.add(`PlaceService: fetched place id=${id}`);
+    return of(PLACES.find(place => place.id === id));
+  }
 }
 
 

@@ -8,25 +8,20 @@ import { PlaceService } from '../place.service';
   styleUrls: ['./places.component.css']
 })
 export class PlacesComponent implements OnInit {
-  selectedPlace: Place;
+  
   places: Place[];
   
-
   constructor(private placeService: PlaceService) { }
-
 
   ngOnInit() {
     this.getPlaces();
   }
-  onSelect(place: Place): void {
-    this.selectedPlace = place;
-  }
+ 
+  
   getPlaces(): void {
     this.placeService.getPlaces()
       .subscribe(places => this.places = places);
   }
-  
-
 }
 
 
